@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+    name: "yckim"
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - .cicd/scripts/pre_build.sh
+  build:
+    commands:
+      - .cicd/scripts/build.sh
+  post_build:
+    commands:
+      - .cicd/scripts/post_build.sh
